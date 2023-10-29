@@ -182,3 +182,7 @@ resource "aws_iam_role_policy_attachment" "attach" {
   policy_arn = aws_iam_policy.main.arn
 }
 
+resource "aws_iam_instance_profile" "profile" {
+  name = "${local.name_prefix}-profile"
+  role = aws_iam_role.main.name
+}
