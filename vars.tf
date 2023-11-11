@@ -18,3 +18,4 @@ variable "public_listener" {}
 variable "lb_priority" {}
 variable "default_vpc_id" {}
 variable "parameters" {}
+variable "az" {}
