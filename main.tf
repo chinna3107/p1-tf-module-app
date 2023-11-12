@@ -115,7 +115,7 @@ resource "aws_autoscaling_group" "main" {
   desired_capacity   = var.desired_capacity
   max_size           = var.max_size
   min_size           = var.min_size
-  target_group_arns = [aws_lb_target_group.main.arn]
+#  target_group_arns = [aws_lb_target_group.main.arn]
   launch_template {
     id      = aws_launch_template.main.id
     version = "$Latest"
@@ -134,7 +134,7 @@ resource "aws_route53_record" "main" {
   ttl     = 30
   records = [var.component == "frontend" ? var.public_alb_name : var.private_alb_name]
 }
-
+/*
 resource "aws_lb_target_group" "main" {
   name     = "${var.component}-${var.env}"
   port     = var.port
@@ -192,5 +192,5 @@ resource "aws_lb_listener_rule" "public" {
       #  values = ["${var.env == "dev" ? "www" : var.env}.devops-tools.online"]
     }
   }
-}
+}*/
 
