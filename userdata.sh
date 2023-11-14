@@ -1,6 +1,6 @@
 #!/bin/bash
    set-hostname ${component}
-   labauto ansible
+   labauto ansible >>/opt/userdata.log
   # yum install  ansible python3.12-pip.noarch -y >>/opt/userdata.log
  #  yum install  ansible -y >>/opt/userdata.log
   # pip3.11 install botocare boto3 &>>/opt/userdata.log
