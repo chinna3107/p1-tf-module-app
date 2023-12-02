@@ -45,7 +45,6 @@ resource "aws_security_group_rule" "nginx_exporter" {
   to_port           = 9113
   protocol          = "tcp"
   cidr_blocks       = [var.monitoring_ingress_cidr]
-  ipv6_cidr_blocks  = [aws_vpc.example.ipv6_cidr_block]
   security_group_id = aws_security_group.main.id
   description       = "Nginx Prometheus Exporter"
 }
